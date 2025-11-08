@@ -1,9 +1,10 @@
 import os
 from dotenv import load_dotenv
+import streamlit as st
 
 load_dotenv()
 
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
+GEMINI_API_KEY = st.secrets.get("GEMINI_API_KEY", os.getenv("GEMINI_API_KEY"))
 
 # Columns in the e-commerce dataset
 INVOICE_DATE_COL = "InvoiceDate"

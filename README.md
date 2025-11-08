@@ -2,7 +2,7 @@
 
 This project is a Streamlit web application that acts as an "AI Data Analyst." It accepts sales data (CSV or Excel), performs a comprehensive analysis, and uses a Generative AI (Google's Gemini) to produce a concise, non-technical business summary with scannable insights and recommended actions.
 
-**Live Demo:** [Streamlit-App-Link](https://Streamlit-App-Link.streamlit.app)
+**Live Demo:** [Streamlit-App-Link](https://mainapppy-6pvekcegzz8z7pz9bimq8t.streamlit.app/)
 
 ## Project Objective
 
