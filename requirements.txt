@@ -1,0 +1,9 @@
+pandas
+numpy
+streamlit
+python-dotenv
+google-generativeai
+kagglehub
+plotly
+scikit-learn
+openpyxl
