@@ -1,4 +1,5 @@
 import pandas as pd
+import streamlit as st
 from config import (
     INVOICE_DATE_COL,
     COUNTRY_COL,
@@ -7,7 +8,7 @@ from config import (
 )
 from anomaly_detector import detect_revenue_anomalies_iforest
 
-
+@st.cache_data
 def aggregate_weekly_revenue(df: pd.DataFrame) -> pd.DataFrame:
     """
     Aggregates revenue by calendar week.
@@ -84,7 +85,7 @@ def compute_core_kpis(df: pd.DataFrame) -> dict:
         "unique_customers": int(unique_customers) if unique_customers is not None else None,
     }
 
-
+@st.cache_data
 def build_summary(df: pd.DataFrame, contamination) -> dict:
     """
     Builds a summary dictionary for downstream analysis.

@@ -1,19 +1,11 @@
 import pandas as pd
+import streamlit as st
 from config import INVOICE_DATE_COL, QUANTITY_COL, UNIT_PRICE_COL
 
 
 def _read_any_file(uploaded_file):
     """
     Reads an uploaded file (CSV or Excel) and returns a pandas DataFrame.
-
-    Args:
-        uploaded_file: File-like object, expected to be a CSV or Excel file.
-
-    Returns:
-        pd.DataFrame: DataFrame containing the file's data.
-
-    Raises:
-        ValueError: If the file type is unsupported.
     """
     name = uploaded_file.name.lower()
     if name.endswith(".csv"):
@@ -24,25 +16,13 @@ def _read_any_file(uploaded_file):
         raise ValueError("Unsupported file type. Please upload CSV or Excel.")
 
 
-
+@st.cache_data
 def load_transactions(uploaded_file) -> pd.DataFrame:
     """
     Loads and lightly cleans an e-commerce transactions dataset.
 
-    - Reads the uploaded file into a DataFrame.
-    - Checks for required columns.
-    - Converts date and numeric columns to appropriate types.
-    - Computes a 'Revenue' column.
-    - Filters out invalid rows.
-
-    Args:
-        uploaded_file: File-like object containing transaction data.
-
-    Returns:
-        pd.DataFrame: Cleaned DataFrame with a 'Revenue' column.
-
-    Raises:
-        ValueError: If required columns are missing.
+    Wrapped with @st.cache_data to ensure the file is only loaded
+    and processed once.
     """
     df = _read_any_file(uploaded_file)
 
