@@ -88,7 +88,7 @@ This app is designed to work with the **E-Commerce Data** dataset from Kaggle.
 
 1.  **Clone the repository:**
     ```sh
-    git clone [https://github.com/mailamm/data-analysis-agent.git](https://github.com/mailamm/data-analysis-agent.git)
+    git clone https://github.com/mailamm/data-analysis-agent.git
     cd data-analysis-agent
     ```
 
